@@ -51,9 +51,15 @@ public class MileageCalculatorNoConversionRadio extends Application {
     private RadioButton rbKPL = new RadioButton(altResult);
     private ToggleGroup tgConv = new ToggleGroup();
     
+
+    
     private GridPane mainPane = new GridPane();
     
-    public void start(Stage primaryStage) {   	    	
+    public void start(Stage primaryStage) {
+        // Add RadioButtons to Toggle Group
+        mpgTog.setToggleGroup(tgConv);
+        litTog.setToggleGroup(tgConv);
+    	
         // set preferences for UI components
         tfDistance.setMaxWidth(txtWidth);
         tfCapacity.setMaxWidth(txtWidth);
