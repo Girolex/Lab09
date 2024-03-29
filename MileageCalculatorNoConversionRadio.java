@@ -34,10 +34,7 @@ public class MileageCalculatorNoConversionRadio extends Application {
     // create UI components split by type
     private Button btnCalc = new Button("Calculate");
     private Button btnReset = new Button("Reset");
-    
-    private RadioButton mpgTog = new RadioButton("MPG");
-    private RadioButton litTog = new RadioButton("L/100KM");
-    
+     
     private Label lblDistance = new Label(defaultMileage);
     private Label lblCapacity = new Label(defaultCapacity);
     private Label lblResult = new Label(defaultResult);
@@ -57,8 +54,8 @@ public class MileageCalculatorNoConversionRadio extends Application {
     
     public void start(Stage primaryStage) {
         // Add RadioButtons to Toggle Group
-        mpgTog.setToggleGroup(tgConv);
-        litTog.setToggleGroup(tgConv);
+        rbMPG.setToggleGroup(tgConv);
+        rbKPL.setToggleGroup(tgConv);
     	
         // set preferences for UI components
         tfDistance.setMaxWidth(txtWidth);
@@ -77,8 +74,8 @@ public class MileageCalculatorNoConversionRadio extends Application {
         // add items to mainPane
         mainPane.add(lblEffType, 0, 0);
 
-        mainPane.add(mpgTog, 0, 2);
-        mainPane.add(litTog, 1, 2);
+        mainPane.add(rbMPG, 0, 2);
+        mainPane.add(rbKPL, 1, 2);
         mainPane.add(lblDistance, 0, 3);
         mainPane.add(tfDistance, 1, 3);
         mainPane.add(lblCapacity, 0, 4);
@@ -92,6 +89,9 @@ public class MileageCalculatorNoConversionRadio extends Application {
         btnCalc.setOnAction(e -> calcMileage());
 
         btnReset.setOnAction(e -> resetForm());
+        
+        rbMPG.setOnAction(e -> changeLabels());
+        rbKPL.setOnAction(e -> changeLabels());
         
         // create a scene and place it in the stage
         Scene scene = new Scene(mainPane); 
