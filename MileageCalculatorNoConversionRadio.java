@@ -38,7 +38,6 @@ public class MileageCalculatorNoConversionRadio extends Application {
     private RadioButton mpgTog = new RadioButton("MPG");
     private RadioButton litTog = new RadioButton("L/100KM");
     
-    
     private Label lblDistance = new Label(defaultMileage);
     private Label lblCapacity = new Label(defaultCapacity);
     private Label lblResult = new Label(defaultResult);
